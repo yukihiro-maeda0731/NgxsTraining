@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AngularDualListBoxModule } from 'angular-dual-listbox';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NgxsModule } from '@ngxs/store';
 
 @NgModule({
   declarations: [AppComponent],
@@ -12,6 +13,7 @@ import { AppComponent } from './app.component';
     BrowserModule,
     AppRoutingModule,
     AngularDualListBoxModule,
+    NgxsModule.forRoot([]),
   ],
   providers: [],
   bootstrap: [AppComponent],
