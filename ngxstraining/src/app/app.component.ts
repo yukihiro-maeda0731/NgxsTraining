@@ -6,6 +6,8 @@ import { DualListComponent } from 'angular-dual-listbox';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
+  section = ['', '朝', '昼', '晩'];
+
   format = {
     add: 'todo',
     remove: 'done',
@@ -15,6 +17,11 @@ export class AppComponent {
     draggable: true,
     locale: 'jp',
   };
-  source = ['掃除', '洗濯', '勉強'];
+  // todo:動的
+  source = ['風呂', '歯磨き', '掃除', '洗濯', '勉強', '就寝'];
   destination = [];
+
+  onSubmit(): void {
+    console.log('ボタン押下');
+  }
 }
