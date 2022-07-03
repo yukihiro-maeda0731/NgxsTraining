@@ -5,6 +5,11 @@ import { AngularDualListBoxModule } from 'angular-dual-listbox';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgxsModule } from '@ngxs/store';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from 'src/app/in-memory-data.service';
+import { ItemState } from './item.state';
+import { ItemService } from './item.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -13,9 +18,13 @@ import { NgxsModule } from '@ngxs/store';
     BrowserModule,
     AppRoutingModule,
     AngularDualListBoxModule,
-    NgxsModule.forRoot([]),
+    NgxsModule.forRoot([ItemState]),
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
+      dataEncapsulation: false,
+    }),
   ],
-  providers: [],
+  providers: [InMemoryDataService, ItemService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

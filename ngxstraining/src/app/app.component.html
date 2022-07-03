@@ -1,7 +1,8 @@
 <div class="container mt-5">
   <form (ngSubmit)="onSubmit()">
     <select class="form-select">
-      <option *ngFor="let s of section">{{ s }}</option>
+      <!-- <option *ngFor="let s of section">{{ s }}</option> -->
+      <option *ngFor="let item of items$ | async">{{ item }}</option>
     </select>
 
     <div class="d-grid col-12 justify-content-end mt-5">
