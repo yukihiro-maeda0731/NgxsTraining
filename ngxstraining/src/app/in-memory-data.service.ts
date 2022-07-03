@@ -7,7 +7,12 @@ import { Observable } from 'rxjs';
 })
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
-    const items = [{ name: '朝' }, { name: '昼' }, { name: '夜' }];
+    const items = [
+      { name: '' },
+      { name: '朝' },
+      { name: '昼' },
+      { name: '夜' },
+    ];
     return { items };
   }
 }
